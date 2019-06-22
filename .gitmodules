@@ -1,0 +1,3 @@
+[submodule "shapemapper2"]
+	path = shapemapper2
+	url = https://github.com/Weeks-UNC/shapemapper2.git

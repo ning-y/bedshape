@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Options</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Support" href="support.html" />
+  <link rel="prev" title="Quickstart" href="quickstart.html" /> 
+  </head>
+
+  <body><div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">bedshape</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#bedshape">Contents</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="motivation.html" class="reference internal ">Motivation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="quickstart.html" class="reference internal ">Quickstart</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Options</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#Sub-commands:" class="reference internal">Sub-commands:</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="support.html" class="reference internal ">Support</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Options</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="quickstart.html"
+       title="previous chapter">← Quickstart</a>
+  </li>
+  <li class="next">
+    <a href="support.html"
+       title="next chapter">Support →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="options">
+<h1>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">bedshape</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">{</span><span class="n">alias</span><span class="p">,</span><span class="n">profile</span><span class="p">}</span> <span class="o">...</span>
+</pre></div>
+</div>
+<div class="section" id="Sub-commands:">
+<h2>Sub-commands:<a class="headerlink" href="#Sub-commands:" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="alias">
+<h3>alias<a class="headerlink" href="#alias" title="Permalink to this headline">¶</a></h3>
+<p>Manage aliases for filenames.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bedshape</span> <span class="n">alias</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">{</span><span class="nb">list</span><span class="p">,</span><span class="n">add</span><span class="p">,</span><span class="n">rm</span><span class="p">}</span> <span class="o">...</span>
+</pre></div>
+</div>
+<div class="section" id="Sub-commands:_repeat1">
+<h4>Sub-commands:<a class="headerlink" href="#Sub-commands:_repeat1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="list">
+<h5>list<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h5>
+<p>List all available aliases.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bedshape</span> <span class="n">alias</span> <span class="nb">list</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add">
+<h5>add<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h5>
+<p>Add a new alias.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bedshape</span> <span class="n">alias</span> <span class="n">add</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="o">--</span><span class="n">reference</span> <span class="n">REFERENCE</span> <span class="o">--</span><span class="n">modified</span> <span class="n">MODIFIED</span>
+                   <span class="p">[</span><span class="o">--</span><span class="n">unmodified</span> <span class="n">UNMODIFIED</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">denatured</span> <span class="n">DENATURED</span><span class="p">]</span>
+                   <span class="n">name</span>
+</pre></div>
+</div>
+<div class="section" id="Positional Arguments">
+<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments" title="Permalink to this headline">¶</a></h6>
+<dl class="option-list">
+<dt><kbd>name</kbd></dt>
+<dd><p>Name of alias to add</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="Named Arguments">
+<h6>Named Arguments<a class="headerlink" href="#Named Arguments" title="Permalink to this headline">¶</a></h6>
+<dl class="option-list">
+<dt><kbd>--reference, -r</kbd></dt>
+<dd><p>Absolute path to reference for this alias.</p>
+</dd>
+<dt><kbd>--modified, -m</kbd></dt>
+<dd><p>Absolute path to the modified alignment for this alias.</p>
+</dd>
+<dt><kbd>--unmodified, --untreated, -u</kbd></dt>
+<dd><p>Absolute path to the unmodified alignment for this alias.</p>
+</dd>
+<dt><kbd>--denatured, -d</kbd></dt>
+<dd><p>Absolute path to the denatured alignment for this alias.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="rm">
+<h5>rm<a class="headerlink" href="#rm" title="Permalink to this headline">¶</a></h5>
+<p>Remove aliases.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bedshape</span> <span class="n">alias</span> <span class="n">rm</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">name</span>
+</pre></div>
+</div>
+<div class="section" id="Positional Arguments_repeat1">
+<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat1" title="Permalink to this headline">¶</a></h6>
+<dl class="option-list">
+<dt><kbd>name</kbd></dt>
+<dd><p>Name of alias to remove</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="profile">
+<h3>profile<a class="headerlink" href="#profile" title="Permalink to this headline">¶</a></h3>
+<p>Calculate reactivity profiles.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bedshape</span> <span class="n">profile</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">alias</span> <span class="n">ALIAS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">reference</span> <span class="n">REFERENCE</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">--</span><span class="n">modified</span> <span class="n">MODIFIED</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">unmodified</span> <span class="n">UNMODIFIED</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">--</span><span class="n">denatured</span> <span class="n">DENATURED</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">region</span> <span class="n">REGION</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">bed</span> <span class="n">BED</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">depth</span> <span class="n">MIN_DEPTH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">min</span><span class="o">-</span><span class="n">mapq</span> <span class="n">MIN_MAPQ</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">bg</span> <span class="n">MAX_BG</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">skip</span><span class="o">-</span><span class="n">plot</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">skip</span><span class="o">-</span><span class="n">shape</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">--</span><span class="n">outdir</span> <span class="n">OUTDIR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">keep</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="Named Arguments_repeat1">
+<h4>Named Arguments<a class="headerlink" href="#Named Arguments_repeat1" title="Permalink to this headline">¶</a></h4>
+<dl class="option-list">
+<dt><kbd>--alias, -a</kbd></dt>
+<dd><p>Alias to use. This, or a combination of –reference and –modified, is required.</p>
+</dd>
+<dt><kbd>--reference, -r</kbd></dt>
+<dd><p>Reference to use. A combination of this and –modified, or –alias, is required.</p>
+</dd>
+<dt><kbd>--modified, -m</kbd></dt>
+<dd><p>Modified alignment to use. A combination of this and –reference, or –alias, is required.</p>
+</dd>
+<dt><kbd>--unmodified, -u</kbd></dt>
+<dd><p>Unmodified alignment to use.</p>
+</dd>
+<dt><kbd>--denatured, -d</kbd></dt>
+<dd><p>Denatured alignment to use.</p>
+</dd>
+<dt><kbd>--region, -rg</kbd></dt>
+<dd><p>Region to use. &lt;rname&gt;:&lt;start&gt;-&lt;stop&gt;. Commas are allowed in &lt;start&gt; and &lt;stop&gt;. This, or –bed is required.</p>
+</dd>
+<dt><kbd>--bed, -b</kbd></dt>
+<dd><p>BED file containing regions to use. This, or –region is required.</p>
+</dd>
+<dt><kbd>--min-depth</kbd></dt>
+<dd><p>Minimum depth to be passed to shapemapper2’s make_reactivity_profile.py and render_figures.py.</p>
+<p>Default: 0</p>
+</dd>
+<dt><kbd>--min-mapq</kbd></dt>
+<dd><p>Minimum mapping quality to be passed to shapemapper2’s shapemapper_mutation_parser in both of its –min_mapq and –min_qual arguments.</p>
+<p>Default: 0</p>
+</dd>
+<dt><kbd>--max-bg</kbd></dt>
+<dd><p>Maximum background mutation rate to be passed to shapemapper2’s make_reactivity_profile.py andrender_figures.py. Should be a float between 0 and 1.</p>
+<p>Default: 1</p>
+</dd>
+<dt><kbd>--skip-plot</kbd></dt>
+<dd><p>If specified, will not run render_figures.py (i.e. no reactivity plot will be produced.</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>--skip-shape</kbd></dt>
+<dd><p>If specified, will not run tab_to_shape.py (i.e. no shape file will be produced.</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>--outdir, -o</kbd></dt>
+<dd><p>Directory to place output files within.</p>
+<p>Default: “./”</p>
+</dd>
+<dt><kbd>--keep, -k</kbd></dt>
+<dd><p>If specified, will not delete temp directory when done.</p>
+<p>Default: False</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="quickstart.html"
+       title="previous chapter">← Quickstart</a>
+  </li>
+  <li class="next">
+    <a href="support.html"
+       title="next chapter">Support →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright .
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+  </div></body>
+</html>

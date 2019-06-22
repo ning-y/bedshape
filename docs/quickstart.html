@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Quickstart</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Options" href="options.html" />
+  <link rel="prev" title="Installation" href="installation.html" /> 
+  </head>
+
+  <body><div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">bedshape</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#bedshape">Contents</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="motivation.html" class="reference internal ">Motivation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Quickstart</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#using-the-profile-subcommand" class="reference internal">Using the profile subcommand</a></li>
+                
+                  <li class="toctree-l2"><a href="#using-the-alias-subcommand" class="reference internal">Using the alias subcommand</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="options.html" class="reference internal ">Options</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="support.html" class="reference internal ">Support</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Quickstart</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="installation.html"
+       title="previous chapter">← Installation</a>
+  </li>
+  <li class="next">
+    <a href="options.html"
+       title="next chapter">Options →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<p>bedshape is composed of two subcommands, <em>profile</em> and <em>alias</em>.</p>
+<div class="section" id="using-the-profile-subcommand">
+<h2>Using the profile subcommand<a class="headerlink" href="#using-the-profile-subcommand" title="Permalink to this headline">¶</a></h2>
+<p>profile is the subcommand handling the generation of mutational and reactivity
+profiles, plots; and <em>shape</em> files.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bedshape profile --reference /path/to/reference.fa <span class="se">\</span>
+        --modified modified.bam <span class="se">\</span>
+        --region chr11:65505800-65505900
+</pre></div>
+</div>
+<p>Like shapemapper2, bedshape requires only a modified sample to work with.
+However, you may also pass a unmodified/untreated sample, and a denatured sample
+as well.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bedshape profile --reference /path/to/reference.fa <span class="se">\</span>
+        --modified modified.bam <span class="se">\</span>
+        --unmodified unmodified.bam <span class="se">\</span>
+        --denatured denatured.bam <span class="se">\</span>
+        --region chr11:65,505,800-65,505-900
+</pre></div>
+</div>
+<p>The optional argument for the unmodified/untreated sample can be spelt as either
+<code class="docutils literal notranslate"><span class="pre">--unmodified</span></code> or <code class="docutils literal notranslate"><span class="pre">--untreated</span></code>. Note that commas are allowed in the region,
+as long as they come after the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>).</p>
+<p>In lieu of a single region, bedshape can also take a BED file to produce outputs
+for all regions specified therein.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bedshape profile --reference /path/to/reference.fa <span class="se">\</span>
+        --modified modified.bam <span class="se">\</span>
+        --unmodified unmodified.bam <span class="se">\</span>
+        --bed interesting-genes.bed
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-alias-subcommand">
+<h2>Using the alias subcommand<a class="headerlink" href="#using-the-alias-subcommand" title="Permalink to this headline">¶</a></h2>
+<p>You may often find yourself working with the same set of aligned reads, which
+reside in some far-away directory with a very long name. To avoid having to
+specify the location of these sets of files every time, bedshape supports the
+<em>aliasing</em> of these files.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bedshape <span class="nb">alias</span> add october-exp <span class="se">\</span>
+        --reference /path/to/reference.fa <span class="se">\</span>
+        --modified /data/october/modified.sam <span class="se">\</span>
+        --unmodified /data/october/unmodified.sam
+</pre></div>
+</div>
+<p>Then, you may pass this ‘alias’ in place of <code class="docutils literal notranslate"><span class="pre">--modified</span></code>, <code class="docutils literal notranslate"><span class="pre">-unmodified</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">-denatured</span></code> arguments in the profile subcommand.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bedshape profile --alias october-exp <span class="se">\</span>
+        --bed interesting-genes.bed
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="installation.html"
+       title="previous chapter">← Installation</a>
+  </li>
+  <li class="next">
+    <a href="options.html"
+       title="next chapter">Options →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright .
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+  </div></body>
+</html>

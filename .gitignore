@@ -1,0 +1,11 @@
+__pycache__
+sphinx-docs
+
+# Copied or built from Weeks-UNC/shapemapper2
+src/make_reactivity_profiles.py
+src/render_figures.py
+src/tab_to_shape.py
+src/shapemapper_mutation_counter
+src/shapemapper_mutation_parser
+
+alias.json

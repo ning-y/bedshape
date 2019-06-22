@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Motivation</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="Installation" href="installation.html" />
+  <link rel="prev" title="bedshape" href="index.html" /> 
+  </head>
+
+  <body><div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">bedshape</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#bedshape">Contents</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Motivation</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#motivation" class="reference internal">Motivation</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="quickstart.html" class="reference internal ">Quickstart</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="options.html" class="reference internal ">Options</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="support.html" class="reference internal ">Support</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Motivation</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← bedshape</a>
+  </li>
+  <li class="next">
+    <a href="installation.html"
+       title="next chapter">Installation →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="motivation">
+<h1>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h1>
+<link rel="stylesheet" type="text/css" href="_static/custom.css"><p>shapemapper2 only receives raw read sequences as input, which it then aligns
+against a target reference sequence using <em>bowtie2</em> or <em>STAR</em>. As a result,
+pre-aligned reads must first be converted back to raw read sequences before they
+can be analysed with shapemapper2—thereby losing some information from their
+previous alignment.</p>
+<p>This can be especially problematic for pre-aligned reads not easily replicable
+by bowtie2 or STAR alignment through shapemapper2, such as those from
+splice-aware aligners such as HISAT2, or if the pre-aligned reads were further
+processed after alignment by programs such as <a class="reference external" href="https://trcls.ningyuan.io">trcls</a>.</p>
+<div class="figure align-default" id="id1">
+<img alt="_images/bt2vhisat2.png" src="_images/bt2vhisat2.png" />
+<p class="caption"><span class="caption-text">IGV visualisation of a bowtie2 alignment (top) versus a HISAT2 splice-aware
+alignment (bottom).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>For transcriptome or genomic alignments, the restriction of the reference region
+for ‘re-alignment’ in shapemapper2 also causes some reads aligning near the ends
+of the reference region to fail to align.</p>
+<div class="figure align-default" id="id2">
+<img alt="_images/bedshapevshapemapper2depths.png" src="_images/bedshapevshapemapper2depths.png" />
+<p class="caption"><span class="caption-text">For transcriptome or genomic alignments, re-alignment of already aligned
+reads against a small reference region causes a proportion of reads to fail
+to align.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>bedshape overcomes these problems by soft-clipping each alignment’s <em>position</em>,
+<em>CIGAR</em>, and <em>MD</em> fields to match the restricted region of interest. Prior
+alignment information is therefore never completely stripped from the sequence
+reads—only clipped.</p>
+<p>Finally, bedshape provides the functionality to run shapemapper2 reactivity
+profile calculations for multiple regions in one execution, given a BED file.</p>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="index.html"
+       title="previous chapter">← bedshape</a>
+  </li>
+  <li class="next">
+    <a href="installation.html"
+       title="next chapter">Installation →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright .
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+  </div></body>
+</html>

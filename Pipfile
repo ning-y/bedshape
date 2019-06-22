@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[scripts]
+test = "pytest test"
+tests = "pytest test"
+testv = "pytest test --log-cli-level DEBUG"
+
+[dev-packages]
+numpydoc = "*"
+pytest = "*"
+sphinx = "*"
+sphinx-argparse = "*"
+sphinx-press-theme = "*"
+
+[packages]
+numpy = "*"
+matplotlib = "*"
+
+[requires]
+python_version = "*"
